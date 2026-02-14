@@ -22,8 +22,10 @@ export const useMyStore=create((set,get)=>({
                 .reduce((acc,t)=> acc+ Number(t.amount),0)
         return {income,expenses,balance:income-expenses}
     },
-    deleteTransaction:()=>{
-        
+    deleteTransaction:(id)=>{
+        const updated=get().transactions.filter((t)=> t.id !==id)
+        localStorage.setItem('ltransactions',JSON.stringify(updated))
+        set({transactions:updated})
     }
 
 }))

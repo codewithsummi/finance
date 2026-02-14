@@ -13,7 +13,7 @@ const TransactionsList = () => {
             </div>
             <div className={t.type}>
                 ₹ {t.amount}
-                <button onClick={()=> deleteTransaction(t.td)}> X </button>
+                <button onClick={()=> deleteTransaction(t.id)}> X </button>
             </div>
            </section>
         )}
