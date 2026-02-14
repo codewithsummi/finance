@@ -1,19 +1,20 @@
 import React from 'react'
-
+import { useMyStore } from '../store/myStore'
 const SummaryExpenses = () => {
+    const {income,expenses,balance}=useMyStore().getSummary()
   return (
     <section className='flex'>
         <aside className='card'>
            <h1>Total Income</h1>
-           <p className='income'> ₹ 250000</p>
+           <p className='income'> ₹ {income}</p>
         </aside>
         <aside className='card'>
             <h1> Total Expenses</h1>
-           <p className='expense'>₹ 50000 </p>
+           <p className='expense'>₹ {expenses} </p>
         </aside>
         <aside className='card'>
             <h1>Balance</h1>
-           <p> ₹ 200000</p>
+           <p> ₹ {balance}</p>
         </aside>
     </section>
   )
